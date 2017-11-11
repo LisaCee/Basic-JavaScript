@@ -26,6 +26,8 @@ const multiplyNums = (x, y, cb) => {
 const contains = (collection, item, cb) => {
   // Write a function called contains that checks if an item is present inside of the given array.
   // Pass true to the callback if it is, otherwise pass false
+  if (collection.item !== '') { return cb(true); }
+  return cb(false);
 };
 
 const removeDuplicates = (collection, cb) => {
