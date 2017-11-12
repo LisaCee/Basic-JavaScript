@@ -26,13 +26,18 @@ const multiplyNums = (x, y, cb) => {
 const contains = (collection, item, cb) => {
   // Write a function called contains that checks if an item is present inside of the given array.
   // Pass true to the callback if it is, otherwise pass false
-  if (collection.item !== '') { return cb(true); }
+  if (collection.includes(item)) { return cb(true); }
   return cb(false);
 };
 
 const removeDuplicates = (collection, cb) => {
   // Write a function called removeDuplicates that removes all duplicate values from the given array.
   // Pass the array to the callback function.  Do not mutate the original array.
+  const array = [];
+  for (let i = 0; i < collection.length; i++) {
+    if (array.indexOf(collection[i]) === -1) { array.push(collection[i]); }
+    cb(array);
+  }
 };
 
 module.exports = {

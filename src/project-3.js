@@ -65,6 +65,7 @@ const hasProperty = (object, property) => {
   // return true if the object has the value of the property argument
   // property is a string
   // otherwise return false
+  return property in object;
 };
 
 const verifyPassword = (user, password) => {
@@ -107,7 +108,9 @@ const sumUserPostLikes = (user) => {
   // each post object has an integer property called 'likes'
   // sum together the likes from all the post objects
   // return the sum
-
+  return user.posts.reduce((a, b) => {
+    return a + b.likes;
+  }, 0);
 };
 
 const addCalculateDiscountPriceMethod = (storeItem) => {
